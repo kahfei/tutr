@@ -33,4 +33,11 @@ class StudentsController < ApplicationController
   		render :action => "edit"
   	end
   end
+
+  def destroy
+    @student = Student.find(params[:id])
+    @student.destroy
+    redirect_to students_url
+
+  end
 end
