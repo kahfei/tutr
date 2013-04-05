@@ -7,5 +7,7 @@
 	<%= f.text_field :school %>
 	<%= f.label :fee %>
 	<%= f.text_field :fee %>
+	<%= f.label :subject %>
+	<%= f.collection_select(:subject_id, @subjects, :id, :name) %>
 	<%= f.submit %>
 <% end %>
