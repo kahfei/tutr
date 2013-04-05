@@ -1,5 +1,8 @@
 Tutr::Application.routes.draw do
+  get "subjects/index"
+
   resources :students
+  resources :subjects
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

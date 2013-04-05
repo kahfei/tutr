@@ -23,6 +23,7 @@ class StudentsController < ApplicationController
 
   def edit
   	@student = Student.find(params[:id])
+    @subjects = Subject.all
   end
 
   def update
