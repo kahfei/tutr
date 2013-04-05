@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  number: 1
+  name: MyString
+  school: MyString
+  fee: 9.99
+  subject: 
+
+two:
+  number: 1
+  name: MyString
+  school: MyString
+  fee: 9.99
+  subject: 
