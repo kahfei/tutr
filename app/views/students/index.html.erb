@@ -1,10 +1,10 @@
 <h1>All Students</h1>
 
 <% @students.each do |student| %>
-	<%= student.number %><%= link_to "edit", edit_student_path(student) %>
+	<%= link_to "#{student.number}", edit_student_path(student) %>
 	<%= student.name %>
 	<%= student.school %>
 	<%= student.fee %>
 	<%= student.subject %>
-
+</br>
 <% end %>
