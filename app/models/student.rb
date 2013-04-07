@@ -1,4 +1,5 @@
 class Student < ActiveRecord::Base
-  belongs_to :subject
-  attr_accessible :fee, :name, :number, :school, :subject_id
+  has_many :subjects, :through => :enrolments
+  has_many :enrolments
+  attr_accessible :fee, :name, :number, :school, :subject_ids
 end

@@ -29,6 +29,7 @@ class StudentsController < ApplicationController
 
   def update
   	@student = Student.find(params[:id])
+
   	if @student.update_attributes(params[:student])
   		redirect_to @student
   	else

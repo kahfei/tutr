@@ -6,6 +6,10 @@
 	<%= f.label :fee %>
 	<%= f.text_field :fee %>
 	<%= f.label :subject %>
-	<%= f.collection_select(:subject_id, @subjects, :id, :name) %>
+	
+	<% @subjects.each do |subject| %>
+	  <label class="li"><%= check_box_tag :subject_ids, subject.id, @student.subjects.include?(subject), :name => 'student[subject_ids][]' %> <u><%= subject.name %></u></label><br />
+	<% end %>
+
 	<%= f.submit %>
 <% end %>

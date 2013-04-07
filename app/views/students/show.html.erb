@@ -2,4 +2,4 @@
 <%= @student.name %>
 <%= @student.school %>
 <%= @student.fee %>
-<%= @student.subject.name%>
+<%= @student.subjects.collect { |a| a.name } %>
