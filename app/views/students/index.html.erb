@@ -5,8 +5,10 @@
 	<%= link_to "#{student.number}", edit_student_path(student) %>
 	<%= student.name %>
 	<%= student.school %>
-	<%= student.fee %>
-	<%= student.subjects.collect { |a| a.name } %>
+	<%= student.fee %>	
+	<% student.subjects.each do |subject| %>
+		<li><%= subject.name %></li>
+	<% end %>
 
 	<%= link_to "Delete", 
 				student,
