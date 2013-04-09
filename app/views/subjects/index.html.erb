@@ -2,6 +2,10 @@
 <div><%= link_to "Create New Subject", new_subject_path %></div>
 
 <% @subjects.each do |subject| %>
-	<%= subject.name %>
+	<li><%= subject.name %>
+	<%= subject.fee %>
+	<%= link_to "Delete",
+				subject,
+				:method => :delete %></li>
 
 <% end %>

@@ -15,4 +15,12 @@ class SubjectsController < ApplicationController
   		render :action => "new"
   	end
   end
+
+  def destroy
+    @subject= Subject.find(params[:id])
+    @subject.destroy
+    redirect_to subjects_url
+  end
+
+
 end
