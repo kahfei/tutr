@@ -5,8 +5,8 @@
 	<%= f.text_field :number %>
 	<%= f.label :school %>
 	<%= f.text_field :school %>
-	<%= f.label :fee %>
-	<%= f.text_field :fee %>
+	<%= f.label :total_fee %>
+	<%= f.text_field :total_fee %>
 	<%= f.label :subject %>
 	<% @subjects.each do |subject| %>
 	  <label class="li"><%= check_box_tag :subject_ids, subject.id, @student.subjects.include?(subject), :name => 'student[subject_ids][]' %> <u><%= subject.name %></u></label><br />
