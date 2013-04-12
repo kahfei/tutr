@@ -4,6 +4,6 @@ class Student < ActiveRecord::Base
   attr_accessible :total_fee, :name, :number, :school, :subject_ids
 
   def total_fee
-  	return subjects.collect {|subject| subject.fee}.sum
+  	total_fee = subjects.collect {|subject| subject.fee}.sum
   end
 end
