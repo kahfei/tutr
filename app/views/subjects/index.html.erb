@@ -2,7 +2,7 @@
 <div><%= link_to "Create New Subject", new_subject_path %></div>
 
 <% @subjects.each do |subject| %>
-	<li><%= subject.name %>
+	<li><%= link_to "#{subject.name}", edit_subject_path(subject) %>
 	<%= subject.fee %>
 	<%= link_to "Delete",
 				subject,

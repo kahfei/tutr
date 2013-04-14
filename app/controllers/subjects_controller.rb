@@ -22,5 +22,19 @@ class SubjectsController < ApplicationController
     redirect_to subjects_url
   end
 
+  def edit
+    @subject = Subject.find(params[:id])
+  end
+
+  def update
+    @subject = Subject.find(params[:id])
+
+    if @subject.update_attributes(params[:subject])
+      redirect_to @subject
+    else
+      render :action => 'edit'
+    end
+  end
+
 
 end
