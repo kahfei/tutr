@@ -1,17 +1,25 @@
-<h1>All Students</h1>
-<div><%= link_to "Create New Student", new_student_path %></div>
 
-<% @students.each do |student| %>
-	<%= link_to "#{student.number}", edit_student_path(student) %>
-	<%= student.name %>
-	<%= student.school %>
-	<%= student.total_fee %>	
-	<% student.subjects.each do |subject| %>
-		<li><%= subject.name %></li>
-	<% end %>
+<div class="row-fluid">
+	<div class="span2">
+      <%= link_to new_student_path,class: "btn" do %>
+          <i class="icon-plus-sign"></i> Add Student
+      <% end %>
+    </div>
 
-	<%= link_to "Delete", 
+<div class="span10">
+      <% @students.each do |student| %>
+		<%= link_to edit_student_path(student) do  %>
+		  <i class="icon-edit"></i>
+		<% end %>
+		<%= student.name %>
+		<%= student.school %>
+		<%= student.total_fee %>	
+		<% student.subjects.each do |subject| %>
+			<li><%= subject.name %></li>
+	    <% end %>
+	    <%= link_to "Delete", 
 				student,
 				:method => :delete %>
-</br>
-<% end %>
+      </br>
+      <% end %>
+</div>
