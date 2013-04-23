@@ -7,7 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/header' %>
+<div class="navbar">
+  <div class="navbar-inner">
+    <%= link_to "Tutr", root_url, :class => 'brand' %>
+    <% if user_signed_in? %>
+      <%= render 'layouts/header' %>
+    <% end %>
+  </div>
+</div>
+
 <%= yield %>
 
 </body>

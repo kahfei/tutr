@@ -1,9 +1,12 @@
 Tutr::Application.routes.draw do
-  get "subjects/index"
+  devise_for :users
+
+  #get "subjects/index"
 
   resources :students
   resources :subjects
 
+  root :to => "students#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
