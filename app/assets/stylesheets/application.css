@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+
+#studentSubMenu, #subjectSubMenu {
+  margin: 0px;
+}
+#studentSubMenu a, #subjectSubMenu a{
+  padding-left: 50px;
+}
