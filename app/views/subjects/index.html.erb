@@ -1,11 +1,20 @@
 <h1>All Subjects</h1>
-<div><%= link_to "Create New Subject", new_subject_path %></div>
-
-<% @subjects.each do |subject| %>
-	<li><%= link_to "#{subject.name}", edit_subject_path(subject) %>
-	<%= subject.fee %>
+<table class="table table-hover">
+	<tr>
+		<th>Name</th>
+		<th>Fee</th>
+		<th></th>
+	</tr>
+	<tr>
+		<% @subjects.each do |subject| %>
+		<td><%= link_to "#{subject.name}", edit_subject_path(subject) %></td>
+		<td><%= subject.fee %></td>
+		<td>
 	<%= link_to "Delete",
 				subject,
-				:method => :delete %></li>
+				:method => :delete %></td>
+	</tr>
+
+
 
 <% end %>
