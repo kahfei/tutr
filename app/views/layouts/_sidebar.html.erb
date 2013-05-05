@@ -3,7 +3,7 @@
 	<ul class='nav nav-tabs nav-stacked'>
 	  <li><%= link_to "Student", "#", :class => 'accordion-toggle', 'data-toggle' => 'collapse', 'data-target' => '#studentSubMenu', 'data-parent' => '#accordion-sidebar' %></li>
 
-	  <div id="studentSubMenu" class="collapse in nav nav-tabs nav-stacked">
+	  <div id="studentSubMenu" class="collapse nav nav-tabs nav-stacked">
 	    <li><%= link_to "All Students", students_path %></li>
 	    <li><%= link_to "Add Student", new_student_path %></li>
 	  </div>
