@@ -8,12 +8,12 @@
 </head>
 <body>
 
+<% if user_signed_in? %>
 <%= link_to "Tutr", root_url, :class => 'brand' %>
 <div class="row">
-<% if user_signed_in? %>
   <%= render 'layouts/sidebar' %>
 <% end %>
-  <div class='span9'>
+  <div class='span12'>
     <%= yield %>
   </div>
 </div>
