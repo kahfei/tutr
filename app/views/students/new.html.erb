@@ -5,6 +5,10 @@
 	<%= f.text_field :number %>
 	<%= f.label :school %>
 	<%= f.text_field :school %>
+	<%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :telephone %>
+    <%= f.text_field :telephone %>
 	<%= f.label :subject %>
 	<% @subjects.each do |subject| %>
 	  <label class="li"><%= check_box_tag :subject_ids, subject.id, @student.subjects.include?(subject), :name => 'student[subject_ids][]' %> <u><%= subject.name %></u></label><br />
