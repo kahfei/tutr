@@ -1,10 +1,21 @@
-<%= @student.number %>
-<%= image_tag @student.avatar.url(:thumb) %>
-<%= @student.name %>
-<%= @student.school %>
-<%= @student.email %>
-<%= @student.telephone %>
-<%= @student.total_fee %>
-<% @student.subjects.each do |subject| %>
-  <li><%= subject.name %></li>
-<% end %>
+<div class="row-fluid profile">
+  <div class="span2">
+    <%= image_tag @student.avatar.url(:thumb), :class => 'img-circle' %>
+  </div>
+  <div class="span10">
+  	<ul>
+      <li><label for="name">Name</label> <span><%= @student.name %></span></li>
+      <li><label for="school">School</label> <span><%= @student.school %></span></li>
+      <li><label for="email">Email</label> <span><%= @student.email %></span></li>
+      <li><label for="telephone">Telephone</label> <span><%= @student.telephone %></span></li>
+      <li><label for="total_fee">Total Monthly Fee</label> <span><%= @student.total_fee %></span></li>
+      <li><label for="subjects">Subjects taken</label> 
+         <ul>
+         <% @student.subjects.each do |subject| %>
+           <li><span class="badge badge-inverse"><%= subject.name %></span></li>
+         <% end %>
+         </ul>
+       </li>
+    </ul>
+  </div>
+</div>

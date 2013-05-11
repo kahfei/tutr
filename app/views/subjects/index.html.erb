@@ -1,10 +1,12 @@
-<h1>All Subjects</h1>
 <table class="table table-hover">
+	<thead>
 	<tr>
 		<th>Name</th>
 		<th>Fee</th>
 		<th></th>
 	</tr>
+    </thead>
+	<tbody>
 	<tr>
 		<% @subjects.each do |subject| %>
 		<td><%= link_to "#{subject.name}", edit_subject_path(subject) %></td>
@@ -14,7 +16,7 @@
 				subject,
 				:method => :delete %></td>
 	</tr>
-
+    </tbody>
 
 
 <% end %>
