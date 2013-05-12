@@ -1,19 +1,30 @@
-<%= form_for @student, :html => { :multipart => true } do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-	<%= image_tag @student.avatar.url(:thumb) %>
-	<%= f.file_field :avatar%>
-	<%= f.label :school %>
-	<%= f.text_field :school %>
-	<%= f.label :email %>
-	<%= f.text_field :email %>
-	<%= f.label :telephone %>
-	<%= f.text_field :telephone %>
-	<%= f.label :subject %>
-	
-	<% @subjects.each do |subject| %>
-	  <label class="li"><%= check_box_tag :subject_ids, subject.id, @student.subjects.include?(subject), :name => 'student[subject_ids][]' %> <u><%= subject.name %></u></label><br />
-	<% end %>
-
-	<%= f.submit %>
-<% end %>
+<div class="row-fluid profile">
+  <%= form_for @student, :html => { :multipart => true } do |f| %>
+  <div class="span2">
+    <%= image_tag @student.avatar.url(:thumb), :class => 'img-circle' %>
+    <%= f.file_field :avatar%>
+  </div>
+  <div class="span6">
+  	<div class="row">
+	  	<ul>
+	      <li><%= f.label :name %><%= f.text_field :name %></li>
+		  <li><%= f.label :school %><%= f.text_field :school %></li>
+		  <li><%= f.label :email %><%= f.text_field :email %></li>
+		  <li><%= f.label :telephone %><%= f.text_field :telephone %></li>
+		  <li><%= f.label :subject %>
+			  <ul>
+			  <% @subjects.each do |subject| %>
+			    <li><%= check_box_tag :subject_ids, subject.id, @student.subjects.include?(subject), :name => 'student[subject_ids][]'%> 
+			    	<%= subject.name %>
+			    </li>
+			  <% end %>
+			  </ul>
+	      </li>
+	    </ul>
+    </div>
+    <div class="row">
+      <%= f.submit "Update", :class=> 'btn btn-block' %>
+    </div>
+    <% end %>
+  </div>
+</div>

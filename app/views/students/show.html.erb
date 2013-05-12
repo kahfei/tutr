@@ -2,7 +2,8 @@
   <div class="span2">
     <%= image_tag @student.avatar.url(:thumb), :class => 'img-circle' %>
   </div>
-  <div class="span10">
+  <div class="span6">
+  	<div class="row">
   	<ul>
       <li><label for="name">Name</label> <span><%= @student.name %></span></li>
       <li><label for="school">School</label> <span><%= @student.school %></span></li>
@@ -16,6 +17,11 @@
          <% end %>
          </ul>
        </li>
+
     </ul>
+    </div>
+    <div class="row">
+    <%= button_to "Edit", edit_student_path, :class => 'btn btn-block', :method => 'get' %>
+    </div>
   </div>
 </div>
