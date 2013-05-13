@@ -2,7 +2,19 @@
   <%= form_for @student, :html => { :multipart => true } do |f| %>
   <div class="span2">
     <%= image_tag @student.avatar.url(:thumb), :class => 'img-circle' %>
-    <%= f.file_field :avatar%>
+    <%= f.file_field :avatar,  :class => 'btn-file-upload'%>
+
+<div class="fileupload fileupload-new" data-provides="fileupload">
+  <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"></div>
+  <div>
+    <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+  </div>
+</div>
+
+
+
+
   </div>
   <div class="span6">
   	<div class="row">
@@ -22,8 +34,9 @@
 	      </li>
 	    </ul>
     </div>
-    <div class="row">
-      <%= f.submit "Update", :class=> 'btn btn-block' %>
+    <div class="row action-button">
+      <%= f.submit "Update", :class=> 'btn' %>
+      <%= link_to 'Cancel', students_path, :class => 'btn' %>
     </div>
     <% end %>
   </div>

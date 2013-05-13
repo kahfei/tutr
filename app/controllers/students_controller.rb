@@ -1,5 +1,4 @@
 class StudentsController < ApplicationController
-    
   def index
   	@students = Student.all
   end
@@ -44,4 +43,6 @@ class StudentsController < ApplicationController
     redirect_to students_url
 
   end
+
+
 end
