@@ -5,7 +5,12 @@ class Student < ActiveRecord::Base
   	              :school, :subject_ids, :email, 
   	              :telephone, :avatar
 
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>", :default_url => "/images/:style/missing.png"}
+  has_attached_file :avatar, 
+                    :styles => { 
+                    	:medium => "300x300>", 
+                    	:thumb => "100x100>", 
+                    	:default_url => "/images/:style/missing.png",
+}
 
   def total_fee
   	total_fee = subjects.collect {|subject| subject.fee}.sum
