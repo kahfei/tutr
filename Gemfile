@@ -10,6 +10,7 @@ gem 'devise'
 gem 'thin'
 gem 'bootstrap-sass'
 gem "paperclip", "~> 3.0"
+gem 'aws-sdk'
 
 
 # Gems used only for assets and not required
