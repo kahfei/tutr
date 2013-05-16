@@ -68,6 +68,7 @@ Tutr::Application.configure do
   #config for storing paperclip image in aws s3
   config.paperclip_defaults = {
     :storage => :s3,
+    :url => ":s3_sg_url",
     :s3_credentials => {
       :bucket => ENV['AWS_BUCKET'],
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
