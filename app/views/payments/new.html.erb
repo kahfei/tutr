@@ -1,0 +1,6 @@
+<%= form_for @payment do |f| %>
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+  <%= f.hidden_field :student_id, :value => params[:student_id] %>
+  <%= f.submit %>
+<% end %>
